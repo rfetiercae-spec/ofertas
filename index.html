@@ -1,0 +1,31 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lançou Tech — ofertas dos vídeos</title><meta name="description" content="Ofertas de tecnologia mostradas nos Shorts do Lançou Tech.">
+<style>
+:root{--bg:#f3f4f6;--fg:#111827;--muted:#6b7280;--card:#fff;--acc:#2563EB}
+@media(prefers-color-scheme:dark){:root{--bg:#0b0f17;--fg:#e5e7eb;--muted:#9ca3af;--card:#151b26}}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--fg)}
+header{background:#111827;color:#fff;padding:18px 16px 14px;text-align:center}h1{margin:0;font-size:1.4rem}
+header p{margin:6px 0 12px;opacity:.85;font-size:.95rem}
+#q{width:100%;max-width:520px;padding:12px 14px;border-radius:12px;border:0;font-size:1rem}
+.disc{font-size:.8rem;color:var(--muted);padding:10px 16px;text-align:center;margin:0}
+main{display:grid;gap:14px;padding:12px 16px 32px;max-width:960px;margin:auto;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+article{background:var(--card);border-radius:16px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.08);scroll-margin-top:16px}
+article:target{outline:3px solid var(--acc)}
+article img{width:100%;height:200px;object-fit:contain;background:#fff;border-radius:10px}
+.n{display:inline-block;background:var(--acc);color:#fff;border-radius:10px;padding:4px 12px;font-weight:800;font-size:1.1rem}
+h2{font-size:1rem;line-height:1.35;margin:10px 0 6px}.rt{color:#d97706;font-size:.9rem}
+.price{font-weight:800;font-size:1.25rem;margin-top:6px}.ts{font-size:.75rem;color:var(--muted)}
+.btn{display:block;text-align:center;margin-top:12px;padding:12px;border-radius:12px;background:var(--acc);color:#fff;text-decoration:none;font-weight:700}
+.vid{display:block;text-align:center;margin-top:8px;font-size:.85rem;color:var(--muted)}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted)}
+</style></head><body><header><h1>Lançou Tech</h1><p>Ofertas dos nossos vídeos — digite o número que apareceu no Short</p>
+<input id="q" type="search" inputmode="search" placeholder="Nº do vídeo ou nome do produto" aria-label="Buscar produto"></header>
+<p class="disc">Como associado da Amazon, ganho com compras qualificadas. Os links abaixo são de afiliado. Preços e disponibilidade podem mudar.</p>
+<main id="list"><article id="1" data-s="1 smartwatch samsung galaxy fit3 display 1.6 polegadas grafite samsung"><div class="n">Nº 1</div>
+<h2>Smartwatch Samsung Galaxy Fit3 Display 1.6 polegadas Grafite</h2><div class='rt'>★ 4,8 (13.400 avaliações)</div><div class='price'>R$ 203,30</div><div class='ts'>Preço visto em 03/11 21:41; pode mudar.</div>
+<a class="btn" rel="sponsored nofollow noopener" target="_blank" href="https://www.amazon.com.br/dp/B0CVCLGV1W?tag=ofertasatua0f-20">Ver oferta na Amazon</a><a class='vid' href='https://youtube.com/shorts/AQrun4oH-Tw' target='_blank' rel='noopener'>▶ Ver o vídeo</a></article><p class="empty" id="none" hidden>Nada encontrado.</p></main>
+<script>
+const q=document.getElementById('q'),items=[...document.querySelectorAll('article')],none=document.getElementById('none');
+q.addEventListener('input',()=>{const v=q.value.trim().toLowerCase().replace(/^n[ºo°]?\s*/,'');let k=0;
+items.forEach(a=>{const hit=!v||(/^\d+$/.test(v)?a.id===v:a.dataset.s.includes(v));a.hidden=!hit;k+=hit});none.hidden=k>0;});
+</script></body></html>
